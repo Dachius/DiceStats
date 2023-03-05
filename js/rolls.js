@@ -1,5 +1,5 @@
-import * as Display from "/js/display.js";
-import * as Calc from "/js/calc.js";
+import * as Display from "./display.js";
+import * as Calc from "./calc.js";
 
 
 function drawChart(){
