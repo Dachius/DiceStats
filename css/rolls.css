@@ -1,0 +1,9 @@
+@import "colors.css";
+
+body {
+    background-color: var(--dark-gray);
+}
+
+#chartDiv{
+    height:90vh;
+}
