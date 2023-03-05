@@ -1,5 +1,7 @@
+export var distributionChart;
+
 export function frequencyChart(distribution){
-    new Chart(document.getElementById('distributionChart'), {
+    distributionChart = new Chart(document.getElementById('distribution-chart'), {
         type: 'bar',
         data: {
             labels: Array.from(distribution.map.keys()),
@@ -7,8 +9,7 @@ export function frequencyChart(distribution){
                 label: 'Frequency',
                 data: Array.from(distribution.map.values()),
                 borderWidth: 0,
-                barPercentage: 1.25,
-                skipNull: true
+                barPercentage: 1.25
             }]
         },
         options: {
@@ -22,16 +23,16 @@ export function frequencyChart(distribution){
 }
 
 export function probabilityChart(distribution){
-    new Chart(document.getElementById('distributionChart'), {
+    distributionChart = new Chart(document.getElementById('distribution-chart'), {
         type: 'bar',
         data: {
             labels: Array.from(distribution.map.keys()),
             datasets: [{
-                label: 'percentage',
+                label: '%',
                 data: Array.from(distribution.map.values()).map(n => 100 * n / distribution.combinations),
-                borderWidth: 0,
+                borderWidth: 1,
                 barPercentage: 1.25,
-                skipNull: true
+                backgroundColor: getComputedStyle(document.documentElement).getPropertyValue('--gray')
             }]
         },
         options: {

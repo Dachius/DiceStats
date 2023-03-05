@@ -30,7 +30,7 @@ export function choose(n, k){
 }
 
 class Distribution {
-    constructor(map, numDice, dieSize, combinations) {
+    constructor(map, numDice, dieSize) {
         this.map = map;
         this.numDice = numDice;
         this.dieSize = dieSize;

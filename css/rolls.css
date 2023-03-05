@@ -2,8 +2,13 @@
 
 body {
     background-color: var(--dark-gray);
+    overflow-y: hidden;
 }
 
-#chartDiv{
-    height:90vh;
+#viewport-container{
+    height: 100vh;
+}
+
+#chart-wrapper{
+    height:89vh;
 }
