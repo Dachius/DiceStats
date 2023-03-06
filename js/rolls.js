@@ -1,8 +1,6 @@
 import * as Display from "./display.js";
 import * as Calc from "./calc.js";
 
-
-
 var formula = document.getElementById("formula");
 formula.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {

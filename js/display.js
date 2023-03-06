@@ -8,14 +8,13 @@ export function frequencyChart(distribution){
             datasets: [{
                 label: 'Frequency',
                 data: Array.from(distribution.map.values()),
-                borderWidth: 0,
                 barPercentage: 1.25
             }]
         },
         options: {
             scales: {
                 y: {
-                beginAtZero: true
+                    beginAtZero: true
                 }
             }
         }

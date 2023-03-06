@@ -2,13 +2,13 @@
 
 body {
     background-color: var(--dark-gray);
-    overflow-y: hidden;
+    overflow-y: default;
 }
 
 #viewport-container{
-    height: 100vh;
+    height: 100%;
 }
 
 #chart-wrapper{
-    height:89vh;
+    max-height: 88vh;
 }
