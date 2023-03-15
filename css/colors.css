@@ -1,8 +1,10 @@
 :root {
     color-scheme: dark;
 
-    --gray: rgb(187, 187, 187);
-    --dark-gray: rgb(24, 26, 27);
+    --gray: rgb(160, 160, 160);
+    --dark-gray: rgb(24, 24, 24);
+    --dark-gray-2: rgb(48, 48, 48);
+    --dark-gray-3: rgb(96, 96, 96);
 
     --gold: #d29a38;
     --blue: rgb(105, 166, 213);

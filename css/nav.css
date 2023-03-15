@@ -1,0 +1,29 @@
+@import "colors.css";
+
+#nav-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--gold);
+}
+
+#nav-menu li{
+    float: left;
+}
+
+#nav-menu a{
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+
+    color: var(--gold);
+    font-size: 1.5em;
+    font-family: times, serif;
+    font-variant: small-caps;
+    font-weight: 500;
+}
+
+#nav-menu a:hover{
+    background-color: var(--dark-gray-2);
+}

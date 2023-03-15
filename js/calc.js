@@ -1,27 +1,31 @@
 // frequency distribution over n s-sided dice.
-export function distribution(n, s){
-    var distribution = Array(n * s + 1).fill(0, n);
+export function distribution(numDice, dieSize){
+    var n = BigInt(numDice), s = BigInt(dieSize);
 
-    for(var i = n; i < distribution.length; i++){
-        for(var j = 0; j <= Math.floor((i - n) / s); j++){
-            distribution[i] += Math.ceil(((j % 2 == 0) * 2 - 1) * choose(n, j) * choose(i - s * j - 1, n - 1));
+    var distribution = Array(numDice * dieSize + 1).fill(0n, numDice);
+
+    for(var i = n; i < BigInt(distribution.length); i++){
+        for(var j = 0n; j <= ((i - n) / s); j++){
+            distribution[i] += (BigInt(j % 2n == 0n) * 2n - 1n) * choose(n, j) * choose(i - s * j - 1n, n - 1n);
         }
     }
 
     var map = new Map();
     for(var i = n; i < distribution.length; i++){
-        map.set(i, distribution[i]);
+        map.set(Number(i), distribution[i]);
     }
 
     return new Distribution(map, n, s);
 }
 
-// factorial using precalculated lookup table and memoization
-var factorials = [1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 39916800, 479001600, 6227020800, 87178291200, 1307674368000, 20922789888000, 355687428096000, 6402373705728000];
+// factorial using memoization
+var factorials = [1n, 1n];
 export function f(n){
-    if(n < factorials.length)
-        return factorials[n];
-    return factorials[n] = f(n - 1) * n;
+    for(i = factorials.length; i < n + 1; i++){
+        factorials.push(factorials[i - 1] * i);
+    }
+    
+    return factorials[n];
 }
 
 // choose function
@@ -34,6 +38,6 @@ class Distribution {
         this.map = map;
         this.numDice = numDice;
         this.dieSize = dieSize;
-        this.combinations = Math.ceil(Math.pow(dieSize, numDice));
+        this.combinations = dieSize ** numDice;
     }
 }

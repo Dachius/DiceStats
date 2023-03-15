@@ -1,14 +1,28 @@
 @import "colors.css";
+@import "nav.css";
 
 body {
-    background-color: var(--dark-gray);
+    background-color: black;
     overflow-y: default;
 }
 
-#viewport-container{
+#viewport-container {
     height: 100%;
+    margin: 1%;
 }
 
-#chart-wrapper{
+#chart-wrapper {
     max-height: 88vh;
+}
+
+input[type=text] {
+    width: 10%;
+    border: 2px solid var(--dark-gray-2);
+    background-color: var(--dark-gray-2);
+    border-radius: 4px;
+    outline: none;
+}
+
+input[type=text]:focus {
+    border: 2px solid var(--gold);
 }

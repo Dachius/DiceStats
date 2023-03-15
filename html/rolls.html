@@ -2,13 +2,20 @@
 <html lang="en">
     <head>
         <title>Dice Stats</title>
-        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
         <link rel="stylesheet" href="../css/rolls.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="../js/jquery-3.6.4.min.js"></script>
+
+        <script src="../js/rolls.js" type="module"></script>
+        <script src="../js/display.js" type="module"></script>
+        <script src="../js/calc.js" type="module"></script>
     </head>
 
     <body>
+        <div id="nav-wrapper"></div>
         <div id="viewport-container">
-            <h1>Rock and Roll!</h1>
             <input type="text" id="formula" name="formula">
             <div id="chart-wrapper">
                 <canvas id="distribution-chart"></canvas>
@@ -16,8 +23,9 @@
         </div>
     </body>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../js/rolls.js" type="module"></script>
-    <script src="../js/display.js" type="module"></script>
-    <script src="../js/calc.js" type="module"></script>
+    <script>
+        $(function(){
+            $("#nav-wrapper").load("nav.html");
+        });
+    </script>
 </html>
