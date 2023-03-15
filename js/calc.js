@@ -21,8 +21,8 @@ export function distribution(numDice, dieSize){
 // factorial using memoization
 var factorials = [1n, 1n];
 export function f(n){
-    for(i = factorials.length; i < n + 1; i++){
-        factorials.push(factorials[i - 1] * i);
+    for(var i = BigInt(factorials.length); i < n + 1n; i++){
+        factorials.push(factorials[i - 1n] * i);
     }
     
     return factorials[n];
